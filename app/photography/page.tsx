@@ -77,8 +77,8 @@ async function getPhotos() {
 		);
 		const remaining = photos.filter(
 			(resource) =>
-				!resource.tags?.includes("ultimate") &&
-				!resource.tags?.includes("fav"),
+					!resource.tags?.includes("ultimate") &&
+					!resource.tags?.includes("fav"),
 		);
 		const orderedPhotos = [...ultimate, ...fav, ...remaining];
 
@@ -121,8 +121,7 @@ export default async function PhotographyPage() {
 
 					{/* Description */}
 					<p className="mt-6 text-lg text-zinc-400 leading-relaxed max-w-xl">
-						A collection of moments, landscapes, and details — framed through
-						light and perspective.
+						Photos I took.
 					</p>
 
 					{/* Metadata row with glassmorphism pills */}
@@ -160,7 +159,7 @@ export default async function PhotographyPage() {
 							<Camera className="relative w-16 h-16 text-zinc-700" />
 						</div>
 						<p className="text-zinc-500 text-sm font-medium tracking-wide">
-							No photos yet — check back soon.
+							No photos yet.
 						</p>
 					</div>
 				)}

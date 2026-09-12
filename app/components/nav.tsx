@@ -34,8 +34,6 @@ export const Navigation: React.FC = () => {
 						{[
 							{ href: "/", label: "Home" },
 							{ href: "/photography", label: "Photography" },
-							{ href: "/about", label: "About" },
-							{ href: "/contact", label: "Contact" },
 						].map((link) => {
 							const isActive =
 								link.href === "/"
