@@ -51,11 +51,13 @@ export default function Home() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="group inline-flex items-center gap-3 border-y border-zinc-700/80 px-5 py-3 text-xs uppercase tracking-[0.2em] text-zinc-400 transition-colors duration-300 hover:border-zinc-300 hover:text-zinc-100"
+							aria-label="Open photography gallery"
+							className="group relative inline-flex items-center gap-3 px-2 py-3 text-xs uppercase tracking-[0.2em] text-zinc-400 transition-colors duration-300 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-300"
 						>
 							<Camera className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
 							{item.name}
 							<ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+							<span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-zinc-300 transition-transform duration-300 group-hover:scale-x-100" />
 						</Link>
 					))}
 				</nav>
