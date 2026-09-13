@@ -1,6 +1,5 @@
 import { ArrowUpRight, Camera } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import Particles from "./components/particles";
 
 const navigation = [
@@ -17,27 +16,6 @@ const links = [
 export default function Home() {
 	return (
 		<div className="relative flex flex-col items-center justify-center w-full min-h-screen min-h-[100svh] overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-			<nav
-				className="absolute right-6 z-20 animate-fade-in sm:right-8"
-				style={{ top: "max(1.5rem, calc(env(safe-area-inset-top) + 1rem))" }}
-			>
-				<ul>
-					{navigation.map((item, index) => (
-						<React.Fragment key={item.href}>
-							<Link
-								href={item.href}
-								className="inline-flex items-center gap-2 rounded-full border border-zinc-700/70 bg-black/20 px-4 py-2 text-sm text-zinc-400 backdrop-blur-sm duration-500 hover:border-zinc-500 hover:text-zinc-100"
-							>
-								<Camera className="h-4 w-4" />
-								{item.name}
-							</Link>
-							{index < navigation.length - 1 && (
-								<span className="text-zinc-700 select-none">·</span>
-							)}
-						</React.Fragment>
-					))}
-				</ul>
-			</nav>
 			<div className="w-[92vw] max-w-6xl h-px animate-glow bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 			<Particles
 				className="absolute inset-0 -z-10 animate-fade-in"
@@ -68,6 +46,19 @@ export default function Home() {
 						</Link>
 					))}
 				</div>
+				<nav className="z-20 mt-8 animate-fade-in">
+					{navigation.map((item) => (
+						<Link
+							key={item.href}
+							href={item.href}
+							className="group inline-flex items-center gap-3 border-y border-zinc-700/80 px-5 py-3 text-xs uppercase tracking-[0.2em] text-zinc-400 transition-colors duration-300 hover:border-zinc-300 hover:text-zinc-100"
+						>
+							<Camera className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+							{item.name}
+							<ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+						</Link>
+					))}
+				</nav>
 			</div>
 		</div>
 	);
