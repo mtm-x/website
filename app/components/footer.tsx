@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Footer: React.FC = () => {
 	return (
 		<footer className="border-t border-zinc-800/50 mt-20">
-			<div className="container mx-auto px-6 py-8 flex items-center justify-center">
+			<div className="container mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
 				<div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
 					<p className="text-xs text-zinc-600">
 						© {new Date().getFullYear()} Thamaraimanalan M
@@ -20,6 +20,12 @@ export const Footer: React.FC = () => {
 						</Link>
 					</p>
 				</div>
+				<a
+					href="#"
+					className="text-xs text-zinc-600 hover:text-zinc-300 transition-colors"
+				>
+					Back to top ↑
+				</a>
 			</div>
 		</footer>
 	);

@@ -33,7 +33,6 @@ export const Navigation: React.FC = () => {
 					<div className="flex justify-between gap-8">
 						{[
 							{ href: "/", label: "Home" },
-							{ href: "/photography", label: "Photography" },
 						].map((link) => {
 							const isActive =
 								link.href === "/"
